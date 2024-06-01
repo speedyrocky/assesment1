@@ -1,0 +1,41 @@
+//Create a variable that can hold a number of NFT's.
+let number =[];
+//Create an object inside your mintNFT function that will hold the metadata for your NFTs.
+//The metadata values will be passed to the function as parameters.
+function mintNFT(brand, model, color, storage, price)
+{
+    let metaData={
+        brand: brand,
+        model: model,
+        color: color,
+        storage: storage,
+        price: price,
+    };
+    number.push(metaData); //When the NFT is ready,you will store it in the variable you created in step 1
+}
+function listNFTs() //Your listNFTs() function will print all of your NFTs metadata to the console 
+{
+    let i =1;
+    for(let val of number)
+        {
+            console.log("NFT " + i++ + ":");
+            console.log("Brand: " + val.brand);
+            console.log("Model: " + val.model);
+            console.log("Color: " + val.color);
+            console.log("Storage: " + val.storage);
+            console.log("Price: " + val.price);
+            console.log("                    ");
+        }
+}
+function getTotalSupply() //getTotalSupply() should return the number of NFT's you have created
+{
+    return number.length;
+}
+//functions calling
+mintNFT("Apple", "iPhone 13", "Space Gray", "128GB", "52000 INR");
+mintNFT("Samsung", "Galaxy S22", "Phantom Black", "256GB", "74,999 INR");
+mintNFT("Google", "Pixel 6", "Stormy Black", "128GB", "35,000 INR");
+mintNFT("OnePlus", "9 Pro", "Morning Mist", "256GB", "62,369");
+mintNFT("Xiaomi", "Mi Note 12 pro", "Glacier Blue", "256GB", "29,000 INR");
+listNFTs();
+console.log("Total Supply: " + getTotalSupply()); //return the number of NFT's you have created
